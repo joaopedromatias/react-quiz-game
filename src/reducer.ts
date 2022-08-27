@@ -40,7 +40,6 @@ export const reducer = (state: StateInterface, action: ActionInterface): StateIn
         case ('SET_IS_PLAYING'): 
             if(action.payload?.gameData) { 
                 let newState = {...state, isLoading: false, isPlaying: true, gameData: action.payload.gameData, submitButtonDisabled: true}
-                console.log(action.payload.gameData)
                 return newState
             }
             break
