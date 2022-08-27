@@ -1,26 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import GlobalStyle from './utils/GlobalStyle';
+import { Box } from './components/shared/Box'
+import { Title } from './components/shared/Title';
+import { ThemeToggle } from './components/shared/ThemeToggle';
+import { ReducerProvider } from './ReducerProvider';
 
-function App() {
+const App: React.FC = (): JSX.Element => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+          <ThemeToggle>
+            <GlobalStyle/>
+              <ReducerProvider>
+                <Title/>
+                <Box/>
+              </ReducerProvider>
+            </ThemeToggle>
+    )
 }
 
 export default App;
