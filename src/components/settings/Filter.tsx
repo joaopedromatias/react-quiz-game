@@ -45,6 +45,7 @@ export const Filter: React.FC<FilterProps> = ({name, type, options}): JSX.Elemen
 const Wrapper = styled.div`
 padding: 2.5rem 3.6rem;
 display: flex;
+gap: 5px;
 flex-wrap: wrap;
 font-family: 'Guizar', serif;
 letter-spacing: 1px;
@@ -55,6 +56,7 @@ letter-spacing: 1px;
   select {
     appearance: none;
     -webkit-appearance: none;
+    -moz-appearance: none;
     background-color: ${ ({theme}) => theme.name==='light'?'var(--select-input-bg-light)':'var(--select-input-bg-dark)' };
     background-image: ${ ({theme}) => theme.name==='light'?`url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='%23000000' viewBox='0 0 256 256'%3E%3Crect width='256' height='256' fill='none'%3E%3C/rect%3E%3Cpolyline points='208 96 128 176 48 96' fill='none' stroke='%23000000' stroke-linecap='round' stroke-linejoin='round' stroke-width='16'%3E%3C/polyline%3E%3C/svg%3E")`
     :`url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='%23000000' viewBox='0 0 256 256'%3E%3Crect width='256' height='256' fill='none'%3E%3C/rect%3E%3Cpolyline points='208 96 128 176 48 96' fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='16'%3E%3C/polyline%3E%3C/svg%3E")`};
@@ -69,22 +71,25 @@ letter-spacing: 1px;
     color: ${( ( {theme} ) => theme.color )};
     transition: all 0.15s linear;
     text-transform: capitalize;
+    border: ${({theme}) => theme.name==='light' ? '1px solid var(--dark-gray)' : '0.5px solid var(--btn-text-disabled)' };
   }
 }
 .flex-questions { 
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   font-size: 1.9rem;
   font-weight: 500;
+  width: 300px;
   input { 
     appearance: none;
     -webkit-appearance: none;
     background: ${(({theme}) => theme.name==='light'?'var(--select-input-bg-light)':'var(--select-input-bg-dark)')};
     margin: 0 4rem;
-    border: 1px solid rgb(122, 122, 122);
+    border: ${({theme}) => theme.name==='light' ? '1px solid var(--dark-gray)' : '0.5px solid var(--btn-text-disabled)' };
     border-radius: 0.5rem;
     transition: all 0.15s linear;
+    max-width: 150px;
     cursor: pointer;
     &::-webkit-slider-thumb { 
       -webkit-appearance: none;
