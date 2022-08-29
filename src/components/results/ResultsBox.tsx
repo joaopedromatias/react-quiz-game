@@ -11,7 +11,7 @@ interface WrapperProps {
     isMobile: boolean
 }
 
-export const ResultsBox = () => { 
+const ResultsBox = () => { 
     const { state } = useContext(ReducerContext);    
     const { score , newHighestScore, percentRight } = useCalculateScore();
     const isMobile = useIsMobile();
@@ -108,3 +108,5 @@ max-height: 64vh;
     }
 }
 `
+
+export default ResultsBox;

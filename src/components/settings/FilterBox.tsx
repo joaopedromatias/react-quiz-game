@@ -23,7 +23,7 @@ categoryOptions.unshift('any');
 
 const difficultyOptions: string[] = ['any', 'easy', 'medium', 'hard'];
 
-export const FilterBox: React.FC = (): JSX.Element => {
+const FilterBox: React.FC = (): JSX.Element => {
   
   const { state, dispatch } = useContext(ReducerContext);
 
@@ -69,3 +69,5 @@ hr {
   margin: 0;
 } 
 `
+
+export default FilterBox;

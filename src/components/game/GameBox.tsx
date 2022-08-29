@@ -6,7 +6,7 @@ import { ReducerContext } from "../../ReducerProvider"
 import styled from "styled-components"
 import { LogEvent } from "../../services/LogEvent"
 
-export const GameBox: React.FC = (): JSX.Element => {
+const GameBox: React.FC = (): JSX.Element => {
 
   const initialCheckValue = Array.apply(null, Array(4)).map(x => false);
 
@@ -89,3 +89,5 @@ hr {
   cursor: pointer;
 }
 `
+
+export default GameBox;

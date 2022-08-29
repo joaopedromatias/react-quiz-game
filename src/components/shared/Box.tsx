@@ -1,9 +1,10 @@
-import React, { useContext } from "react";
+import React, { useContext, lazy, Suspense } from "react";
 import { ReducerContext } from "../../ReducerProvider";
-import { GameBox } from "../game/GameBox";
-import { FilterBox } from "../settings/FilterBox";
-import { ResultsBox } from "../results/ResultsBox";
 import Button from "./Button";
+
+const FilterBox = lazy(() => import('../settings/FilterBox'));
+const GameBox = lazy(() => import('../game/GameBox'));
+const ResultsBox = lazy(() => import('../results/ResultsBox'));
 
 export const Box: React.FC = (): JSX.Element => { 
     
@@ -11,14 +12,23 @@ export const Box: React.FC = (): JSX.Element => {
 
     if (state.isSetting || state.isLoading || state.isPlaying) { 
         return <div className="box">
-            {state.isSetting || state.isLoading?<FilterBox/>:state.isPlaying?<GameBox/>:<></>}
+            <Suspense fallback={Fallback()}>
+                {state.isSetting || state.isLoading?<FilterBox/>:state.isPlaying?<GameBox/>:<></>}
+            </Suspense>
         </div>
     }
 
     return <>
         <div className="box" style={{marginBottom: '15px'}}>
-            <ResultsBox/> 
+            <Suspense fallback={Fallback()}>
+                <ResultsBox/> 
+            </Suspense>
         </div>
         <Button btnType="button" disabled={false} onClick={() => dispatch({type: 'RESET_SCREEN'})}>Play Again</Button> 
-    </>
+        </>
+    
+}
+
+const Fallback = () => { 
+    return <h3>Calculating results</h3>
 }
