@@ -4,6 +4,7 @@ import { Question } from "./Question"
 import Button from "../shared/Button"
 import { ReducerContext } from "../../ReducerProvider"
 import styled from "styled-components"
+import { LogEvent } from "../../services/LogEvent"
 
 export const GameBox: React.FC = (): JSX.Element => {
 
@@ -26,6 +27,17 @@ export const GameBox: React.FC = (): JSX.Element => {
     }))
   }
 
+  const showNextStep = () => { 
+    setStep(step+1);
+    LogEvent.send('game', 'button', 'answer-enabled', 0);
+  }
+
+  const showResultsBox = () => { 
+    LogEvent.send('game', 'button', 'answer-enabled', 0);
+    LogEvent.send('results', 'view', 'results-screen', 1);
+    dispatch({type: 'SET_RESULTS_BOX'});
+  }
+
   const handleAnswer = () => { 
     if (!state.submitButtonDisabled) {
       let chosenOption = check.indexOf(true);
@@ -33,10 +45,12 @@ export const GameBox: React.FC = (): JSX.Element => {
       let isAnswerCorrect = chosenOption===questionCorrectAnswerIndex;
       dispatch({type: 'COMPUTE_STEP_RESULT_DATA', payload: {isAnswerCorrect: isAnswerCorrect, answerGiven: state.gameData![step].answers[chosenOption], currentStep: step }});
       setCheck(initialCheckValue);
-      step+1<state.gameData!.length?
-        setStep(step+1):
-        dispatch({type: 'SET_RESULTS_BOX'});
+      step+1<state.gameData!.length ?
+      showNextStep()
+      :
+      showResultsBox();
     } else { 
+      LogEvent.send('game', 'button', 'answer-disabled', 0);
       dispatch({type: 'SHOW_MODAL', payload: { modalMessage: 'You need to choose an answer'} });
     }
   }

@@ -5,6 +5,7 @@ import { ThemeProvider, Theme } from 'styled-components';
 import { Storage } from '../../services/StorageService'
 import { SunIcon } from '../icons/SunIcon'
 import { MoonIcon } from '../icons/MoonIcon'
+import { LogEvent } from '../../services/LogEvent'
 
 interface Props {
   children: React.ReactNode
@@ -26,7 +27,10 @@ export const ThemeToggle: React.FC<Props> = ( { children } ): JSX.Element => {
 
   return <ThemeProvider theme={theme}>
       <Wrapper>
-          <div onClick={() => setTheme(theme.index===0?DarkTheme:LightTheme)}>
+          <div onClick={() => {
+            setTheme(theme.index===0?DarkTheme:LightTheme)
+            LogEvent.send('theme', 'change', `${theme.name==='light'?'dark':'light'}`, 0);
+          }}>
             <div className='container'>
               {theme.name==='light'?<SunIcon/>:<MoonIcon/>}
             </div>

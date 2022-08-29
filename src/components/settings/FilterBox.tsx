@@ -5,6 +5,7 @@ import { ReducerContext } from '../../ReducerProvider';
 import { QuizCategoryEnum } from '../../utils/Enums';
 import styled from 'styled-components';
 import { LoadingIcon } from '../icons/LoadingIcon'
+import { LogEvent } from '../../services/LogEvent'
 
 interface WrapperProps { 
   isLoading: boolean
@@ -30,8 +31,10 @@ export const FilterBox: React.FC = (): JSX.Element => {
     e.preventDefault();
     dispatch({type: 'REMOVE_LOADING_WARNING'})
     if(!state.submitButtonDisabled) { 
+      LogEvent.send('filter', 'button', 'start-enabled', 0);
       dispatch({ type: 'SET_LOADING' });
     } else { 
+      LogEvent.send('filter', 'button', 'start-disabled', 0);
       dispatch({type: 'SHOW_MODAL', payload: { modalMessage: 'Must select more than 0 questions'} });
     }
   }

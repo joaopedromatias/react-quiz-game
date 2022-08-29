@@ -1,4 +1,5 @@
 import { StateInterface, ActionInterface } from "./utils/types";
+import { LogEvent } from "./services/LogEvent";
 
 export const reducer = (state: StateInterface, action: ActionInterface): StateInterface => {
     
@@ -62,6 +63,7 @@ export const reducer = (state: StateInterface, action: ActionInterface): StateIn
             return {...state, gameData: gameData}
 
             case('SHOW_LOADING_WARNING'):
+                LogEvent.send('loading', 'view', 'loading-warning', 1);
                 return {...state, loadingWarning: true}
 
             case('REMOVE_LOADING_WARNING'):
