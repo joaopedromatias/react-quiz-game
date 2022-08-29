@@ -12,7 +12,7 @@ export const Box: React.FC = (): JSX.Element => {
 
     if (state.isSetting || state.isLoading || state.isPlaying) { 
         return <div className="box">
-            <Suspense fallback={Fallback()}>
+            <Suspense fallback={FallbackFilterAndGame()}>
                 {state.isSetting || state.isLoading?<FilterBox/>:state.isPlaying?<GameBox/>:<></>}
             </Suspense>
         </div>
@@ -20,7 +20,7 @@ export const Box: React.FC = (): JSX.Element => {
 
     return <>
         <div className="box" style={{marginBottom: '15px'}}>
-            <Suspense fallback={Fallback()}>
+            <Suspense fallback={FallbackResults()}>
                 <ResultsBox/> 
             </Suspense>
         </div>
@@ -29,6 +29,10 @@ export const Box: React.FC = (): JSX.Element => {
     
 }
 
-const Fallback = () => { 
-    return <h3>Calculating results</h3>
+const FallbackFilterAndGame = () => { 
+    return <h3 style={{lineHeight: '500px', opacity: 0}}>.</h3>
+}
+
+const FallbackResults = () => { 
+    return <h3 style={{lineHeight: '500px', opacity: 0}}>.</h3>
 }
