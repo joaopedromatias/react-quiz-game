@@ -26,8 +26,9 @@ export const FilterBox: React.FC = (): JSX.Element => {
   
   const { state, dispatch } = useContext(ReducerContext);
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>): void => { 
+  const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
+    dispatch({type: 'REMOVE_LOADING_WARNING'})
     if(!state.submitButtonDisabled) { 
       dispatch({ type: 'SET_LOADING' });
     } else { 

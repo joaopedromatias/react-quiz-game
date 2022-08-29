@@ -14,6 +14,7 @@ export interface StateInterface {
     isResultsPage: boolean
     submitButtonDisabled: boolean
     questions: string
+    loadingWarning: boolean
     category: string
     difficulty: string
     modal: { 

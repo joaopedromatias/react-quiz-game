@@ -59,7 +59,9 @@ export const useFetchQuestions = async (questions: string) => {
             }
             phases.push(phase)
         })
-        dispatch({type: 'SET_IS_PLAYING', payload: {gameData: phases }})
+        if (!state.loadingWarning) { 
+            dispatch({type: 'SET_IS_PLAYING', payload: {gameData: phases }})
+        }
     }
 
     const fetchQuestionsTokenized = async (token: string) => {
@@ -72,6 +74,7 @@ export const useFetchQuestions = async (questions: string) => {
             fetchQuestionsNotTokenized();
         } else if (data.response_code === APIResponses.SUCCESS) {
             treatResponse(data)
+            return true;
         }
     }
 
@@ -80,9 +83,18 @@ export const useFetchQuestions = async (questions: string) => {
         const data = await res.json();
         if (data.response_code===APIResponses.SUCCESS) { 
             treatResponse(data)
+            return true;
         }
     }
 
+    const timeout = setTimeout(() => {     
+        dispatch({type: 'SHOW_LOADING_WARNING'});
+    }, 6000)
+
     let apiToken = await useFetchToken(); 
-    apiToken?fetchQuestionsTokenized(apiToken):fetchQuestionsNotTokenized();
+    const loaded = await (apiToken ? fetchQuestionsTokenized(apiToken) : fetchQuestionsNotTokenized());
+    
+    if (loaded === true) { 
+        clearTimeout(timeout);
+    }
 }

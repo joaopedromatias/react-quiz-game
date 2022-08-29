@@ -1,5 +1,4 @@
 import { StateInterface, ActionInterface } from "./utils/types";
-import { initialState } from "./utils/initialState";
 
 export const reducer = (state: StateInterface, action: ActionInterface): StateInterface => {
     
@@ -61,6 +60,12 @@ export const reducer = (state: StateInterface, action: ActionInterface): StateIn
             gameData[action.payload?.currentStep!] = joinData;
 
             return {...state, gameData: gameData}
+
+            case('SHOW_LOADING_WARNING'):
+                return {...state, loadingWarning: true}
+
+            case('REMOVE_LOADING_WARNING'):
+                return {...state, loadingWarning: false}
         }
 
         return state
