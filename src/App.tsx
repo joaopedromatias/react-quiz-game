@@ -1,4 +1,3 @@
-import React from 'react';
 import GlobalStyle from './utils/GlobalStyle';
 import { Box } from './components/shared/Box'
 import { Title } from './components/shared/Title';

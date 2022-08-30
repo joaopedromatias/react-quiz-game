@@ -1,4 +1,4 @@
-import React, { ReactNode, useReducer } from 'react'
+import { ReactNode, useReducer, createContext } from 'react'
 import { StateInterface, ActionInterface} from './utils/types'
 import { reducer } from './reducer'
 import { initialState } from './utils/initialState'
@@ -8,7 +8,7 @@ type ContextType = {
     dispatch: React.Dispatch<ActionInterface>
 }
 
-export const ReducerContext = React.createContext<ContextType>({} as ContextType);
+export const ReducerContext = createContext<ContextType>({} as ContextType);
 
 interface Props { 
     children: ReactNode
