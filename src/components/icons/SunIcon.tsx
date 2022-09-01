@@ -1,23 +1,113 @@
-import styled from "styled-components"
+import styled from 'styled-components';
 
-export const SunIcon = () => { 
-
-    return <Wrapper>
-        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="var(--black)" viewBox="0 0 256 256">
-            <rect width="256" height="256" fill="none"></rect>
-            <circle cx="128" cy="128" r="60" fill="none" stroke={"var(--black)"} strokeLinecap="round" strokeLinejoin="round" strokeWidth="16"></circle>
-            <line x1="128" y1="36" x2="128" y2="28" fill="none" stroke={"var(--black)"} strokeLinecap="round" strokeLinejoin="round" strokeWidth="16"></line>
-            <line x1="62.9" y1="62.9" x2="57.3" y2="57.3" fill="none" stroke={"var(--black)"} strokeLinecap="round" strokeLinejoin="round" strokeWidth="16"></line>
-            <line x1="36" y1="128" x2="28" y2="128" fill="none" stroke={"var(--black)"} strokeLinecap="round" strokeLinejoin="round" strokeWidth="16"></line>
-            <line x1="62.9" y1="193.1" x2="57.3" y2="198.7" fill="none" stroke={"var(--black)"}strokeLinecap="round" strokeLinejoin="round" strokeWidth="16"></line>
-            <line x1="128" y1="220" x2="128" y2="228" fill="none" stroke={"var(--black)"}strokeLinecap="round" strokeLinejoin="round" strokeWidth="16"></line>
-            <line x1="193.1" y1="193.1" x2="198.7" y2="198.7" fill="none" stroke={"var(--black)"}strokeLinecap="round" strokeLinejoin="round" strokeWidth="16"></line>
-            <line x1="220" y1="128" x2="228" y2="128" fill="none" stroke={"var(--black)"} strokeLinecap="round" strokeLinejoin="round" strokeWidth="16"></line>
-            <line x1="193.1" y1="62.9" x2="198.7" y2="57.3" fill="none" stroke={"var(--black)"} strokeLinecap="round" strokeLinejoin="round" strokeWidth="16"></line>
-        </svg>
+export const SunIcon = () => {
+  return (
+    <Wrapper>
+      <svg xmlns='http://www.w3.org/2000/svg' width='35' height='35' fill='var(--black)' viewBox='0 0 256 256'>
+        <rect width='256' height='256' fill='none'></rect>
+        <circle
+          cx='128'
+          cy='128'
+          r='60'
+          fill='none'
+          stroke={'var(--black)'}
+          strokeLinecap='round'
+          strokeLinejoin='round'
+          strokeWidth='16'
+        ></circle>
+        <line
+          x1='128'
+          y1='36'
+          x2='128'
+          y2='28'
+          fill='none'
+          stroke={'var(--black)'}
+          strokeLinecap='round'
+          strokeLinejoin='round'
+          strokeWidth='16'
+        ></line>
+        <line
+          x1='62.9'
+          y1='62.9'
+          x2='57.3'
+          y2='57.3'
+          fill='none'
+          stroke={'var(--black)'}
+          strokeLinecap='round'
+          strokeLinejoin='round'
+          strokeWidth='16'
+        ></line>
+        <line
+          x1='36'
+          y1='128'
+          x2='28'
+          y2='128'
+          fill='none'
+          stroke={'var(--black)'}
+          strokeLinecap='round'
+          strokeLinejoin='round'
+          strokeWidth='16'
+        ></line>
+        <line
+          x1='62.9'
+          y1='193.1'
+          x2='57.3'
+          y2='198.7'
+          fill='none'
+          stroke={'var(--black)'}
+          strokeLinecap='round'
+          strokeLinejoin='round'
+          strokeWidth='16'
+        ></line>
+        <line
+          x1='128'
+          y1='220'
+          x2='128'
+          y2='228'
+          fill='none'
+          stroke={'var(--black)'}
+          strokeLinecap='round'
+          strokeLinejoin='round'
+          strokeWidth='16'
+        ></line>
+        <line
+          x1='193.1'
+          y1='193.1'
+          x2='198.7'
+          y2='198.7'
+          fill='none'
+          stroke={'var(--black)'}
+          strokeLinecap='round'
+          strokeLinejoin='round'
+          strokeWidth='16'
+        ></line>
+        <line
+          x1='220'
+          y1='128'
+          x2='228'
+          y2='128'
+          fill='none'
+          stroke={'var(--black)'}
+          strokeLinecap='round'
+          strokeLinejoin='round'
+          strokeWidth='16'
+        ></line>
+        <line
+          x1='193.1'
+          y1='62.9'
+          x2='198.7'
+          y2='57.3'
+          fill='none'
+          stroke={'var(--black)'}
+          strokeLinecap='round'
+          strokeLinejoin='round'
+          strokeWidth='16'
+        ></line>
+      </svg>
     </Wrapper>
-}
+  );
+};
 
 const Wrapper = styled.div`
-transform: translateX(9px) translateY(-11px);
-`
+  transform: translateX(9px) translateY(-11px);
+`;

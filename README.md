@@ -1,13 +1,16 @@
 # 🕹️ Quiz Game
 
-This is a quiz game made by using the following technologies: 
+This is a quiz game made by using the following technologies:
 
 #### `React`
+
 #### `TypeScript`
+
 #### `Styled Components`
+
 #### `React Spring`
 
-🚀 Checkout the [live project](https://react-quiz-game-tdb.netlify.app/) 
+🚀 Checkout the [live project](https://react-quiz-game-tdb.netlify.app/)
 
 # 🤾 State Management
 
@@ -15,7 +18,7 @@ The state management relies on the usage of `useReducer` and `Context API`
 
 The useReducer function and state are passed through the whole application components by the Context Provider.
 
-In order to get the reducer function or state inside a component we need to: 
+In order to get the reducer function or state inside a component we need to:
 
 ```javascript
 const { state, dispatch } = useContext(ReducerContext);
@@ -35,13 +38,13 @@ The project `src` contains three folders
 
 3. <strong>Utils</strong>: contains the files related to theming, global style, types, enums and a custom hook to check wheter the user is acessing by a mobile device or not.
 
-## ⚡ Performance 
+## ⚡ Performance
 
-The following measures were taken in order to increase performance: 
+The following measures were taken in order to increase performance:
 
 1. preload external css fonts
 2. lazy loading main React components (configuring game, playing and results)
-3. optimize analytics tools (less is more) 
+3. optimize analytics tools (less is more)
 
 ![page speed mobile](./perf-imgs/pagespeed-desktop.png)
 

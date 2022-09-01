@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
 :root {
@@ -37,8 +37,8 @@ const GlobalStyle = createGlobalStyle`
 }
 
 html { 
-  background-color: ${ ( { theme : { background }} ) => background};
-  color: ${ ( { theme : { color }} ) => color};
+  background-color: ${({ theme: { background } }) => background};
+  color: ${({ theme: { color } }) => color};
   @media (max-width: 600px) {
     font-size: 1.1rem;
   }
@@ -49,7 +49,10 @@ body {
   margin: 0;
   width: 100vw;
   height: 100vh;
-  background-image: ${({theme}) => theme.name==='light'?`url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='120' fill='%23dddddd' viewBox='0 0 256 256'%3E%3Crect width='256' height='256' fill='none'%3E%3C/rect%3E%3Cpath d='M54.5,201.5c-9.2-9.2-3.1-28.5-7.8-39.8S24,140.5,24,128s17.8-22,22.7-33.7-1.4-30.6,7.8-39.8S83,51.4,94.3,46.7,115.5,24,128,24s22,17.8,33.7,22.7,30.6-1.4,39.8,7.8,3.1,28.5,7.8,39.8S232,115.5,232,128s-17.8,22-22.7,33.7,1.4,30.6-7.8,39.8-28.5,3.1-39.8,7.8S140.5,232,128,232s-22-17.8-33.7-22.7S63.7,210.7,54.5,201.5Z' fill='none' stroke='%23dddddd' stroke-linecap='round' stroke-linejoin='round' stroke-width='16'%3E%3C/path%3E%3Ccircle cx='128' cy='180' r='12'%3E%3C/circle%3E%3Cpath d='M128,144v-8a28,28,0,1,0-28-28' fill='none' stroke='%23dddddd' stroke-linecap='round' stroke-linejoin='round' stroke-width='16'%3E%3C/path%3E%3C/svg%3E")`:`url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='120' fill='%23191919' viewBox='0 0 256 256'%3E%3Crect width='256' height='256' fill='none'%3E%3C/rect%3E%3Cpath d='M54.5,201.5c-9.2-9.2-3.1-28.5-7.8-39.8S24,140.5,24,128s17.8-22,22.7-33.7-1.4-30.6,7.8-39.8S83,51.4,94.3,46.7,115.5,24,128,24s22,17.8,33.7,22.7,30.6-1.4,39.8,7.8,3.1,28.5,7.8,39.8S232,115.5,232,128s-17.8,22-22.7,33.7,1.4,30.6-7.8,39.8-28.5,3.1-39.8,7.8S140.5,232,128,232s-22-17.8-33.7-22.7S63.7,210.7,54.5,201.5Z' fill='none' stroke='%23191919' stroke-linecap='round' stroke-linejoin='round' stroke-width='16'%3E%3C/path%3E%3Ccircle cx='128' cy='180' r='12'%3E%3C/circle%3E%3Cpath d='M128,144v-8a28,28,0,1,0-28-28' fill='none' stroke='%23191919' stroke-linecap='round' stroke-linejoin='round' stroke-width='16'%3E%3C/path%3E%3C/svg%3E")`};
+  background-image: ${({ theme }) =>
+    theme.name === 'light'
+      ? `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='120' fill='%23dddddd' viewBox='0 0 256 256'%3E%3Crect width='256' height='256' fill='none'%3E%3C/rect%3E%3Cpath d='M54.5,201.5c-9.2-9.2-3.1-28.5-7.8-39.8S24,140.5,24,128s17.8-22,22.7-33.7-1.4-30.6,7.8-39.8S83,51.4,94.3,46.7,115.5,24,128,24s22,17.8,33.7,22.7,30.6-1.4,39.8,7.8,3.1,28.5,7.8,39.8S232,115.5,232,128s-17.8,22-22.7,33.7,1.4,30.6-7.8,39.8-28.5,3.1-39.8,7.8S140.5,232,128,232s-22-17.8-33.7-22.7S63.7,210.7,54.5,201.5Z' fill='none' stroke='%23dddddd' stroke-linecap='round' stroke-linejoin='round' stroke-width='16'%3E%3C/path%3E%3Ccircle cx='128' cy='180' r='12'%3E%3C/circle%3E%3Cpath d='M128,144v-8a28,28,0,1,0-28-28' fill='none' stroke='%23dddddd' stroke-linecap='round' stroke-linejoin='round' stroke-width='16'%3E%3C/path%3E%3C/svg%3E")`
+      : `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='120' fill='%23191919' viewBox='0 0 256 256'%3E%3Crect width='256' height='256' fill='none'%3E%3C/rect%3E%3Cpath d='M54.5,201.5c-9.2-9.2-3.1-28.5-7.8-39.8S24,140.5,24,128s17.8-22,22.7-33.7-1.4-30.6,7.8-39.8S83,51.4,94.3,46.7,115.5,24,128,24s22,17.8,33.7,22.7,30.6-1.4,39.8,7.8,3.1,28.5,7.8,39.8S232,115.5,232,128s-17.8,22-22.7,33.7,1.4,30.6-7.8,39.8-28.5,3.1-39.8,7.8S140.5,232,128,232s-22-17.8-33.7-22.7S63.7,210.7,54.5,201.5Z' fill='none' stroke='%23191919' stroke-linecap='round' stroke-linejoin='round' stroke-width='16'%3E%3C/path%3E%3Ccircle cx='128' cy='180' r='12'%3E%3C/circle%3E%3Cpath d='M128,144v-8a28,28,0,1,0-28-28' fill='none' stroke='%23191919' stroke-linecap='round' stroke-linejoin='round' stroke-width='16'%3E%3C/path%3E%3C/svg%3E")`};
   background-repeat: space;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -86,22 +89,22 @@ button, select, input:focus {
 .box {
   font-family: 'Lato', sans-serif;
   transition: all linear .08s;
-  background-color: ${ ( { theme : { background }} ) => background};
+  background-color: ${({ theme: { background } }) => background};
   display: block;
   width: 550px;
   border-radius: 0.5rem;
-  border: 1px solid ${({theme}) => theme.name==='light'?'#111825':'#9e9b9b' };
+  border: 1px solid ${({ theme }) => (theme.name === 'light' ? '#111825' : '#9e9b9b')};
   box-shadow: 1.5px 1.5px 3px;
   margin-bottom: 30px;
   max-height: 600px;
   overflow-y: auto;
-  scrollbar-color: ${({theme}) => theme.name==='light' ? '' : '#505050 #393939'} ;
+  scrollbar-color: ${({ theme }) => (theme.name === 'light' ? '' : '#505050 #393939')} ;
   scrollbar-width: thin;
   ::-webkit-scrollbar { 
-    background: ${({theme}) => theme.name==='light' ? '' : '#393939'};
+    background: ${({ theme }) => (theme.name === 'light' ? '' : '#393939')};
   }
   ::-webkit-scrollbar-thumb {
-    background: ${({theme}) => theme.name==='light'? '' : '#5c5c5c'};
+    background: ${({ theme }) => (theme.name === 'light' ? '' : '#5c5c5c')};
     border-radius: 10px;
   }
 
@@ -110,6 +113,6 @@ button, select, input:focus {
     max-height: none;
   }
 }
-`
+`;
 
 export default GlobalStyle;
