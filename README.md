@@ -34,3 +34,15 @@ The project `src` contains three folders
 2. <strong>Services</strong>: custom hooks and browser APIs classes (ease the usage of local storage and cookies).
 
 3. <strong>Utils</strong>: contains the files related to theming, global style, types, enums and a custom hook to check wheter the user is acessing by a mobile device or not.
+
+## ⚡ Performance 
+
+The following measures were taken in order to increase performance: 
+
+1. preload external css fonts
+2. lazy loading main React components (configuring game, playing and results)
+3. optimize analytics tools (less is more) 
+
+![page speed mobile](./perf-imgs/pagespeed-desktop.png)
+
+![page speed desktop](./perf-imgs/pagespeed-mobile.png)
