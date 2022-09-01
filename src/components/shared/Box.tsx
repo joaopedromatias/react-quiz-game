@@ -19,12 +19,12 @@ export const Box: React.FC = (): JSX.Element => {
     }
 
     return <>
-        <div className="box" style={{marginBottom: '15px'}}>
+        <div className="box" style={{marginBottom: '20px'}}>
             <Suspense fallback={FallbackResults()}>
                 <ResultsBox/> 
             </Suspense>
         </div>
-        <Button btnType="button" disabled={false} onClick={() => dispatch({type: 'RESET_SCREEN'})}>Play Again</Button> 
+        <Button btnType="button" disabled={false} onClick={() => dispatch({type: 'RESET_SCREEN'})} style={{marginBottom: '20px'}}>Play Again</Button> 
         </>
     
 }
