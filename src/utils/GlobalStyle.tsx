@@ -32,7 +32,7 @@ const GlobalStyle = createGlobalStyle`
     --footer-color-dark: #d1d1d1;
     --username-light: #000000;
     --username-dark: #43a7e9;
-    --icons-main-color: #afafaf;
+    --icons-main-color: #878787;
 
 }
 

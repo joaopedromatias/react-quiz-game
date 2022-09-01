@@ -13,7 +13,7 @@ export const Footer = () => {
 
     const isMobile = useIsMobile();
 
-    const iconsInitalColor = 'var(--icons-main-color)'
+    const iconsInitalColor = 'var(--icons-main-color)';
 
     const [twitterColor, setTwitterColor] = useState<string>(iconsInitalColor)
     const [facebookColor, setFacebookColor] = useState<string>(iconsInitalColor)
