@@ -7,15 +7,7 @@ interface Props extends GameData {
   index: number;
 }
 
-export const ResultItem: React.FC<Props> = ({
-  difficulty,
-  index,
-  correctIndex,
-  answerGiven,
-  answers,
-  status,
-  question,
-}) => {
+export const ResultItem: React.FC<Props> = ({ index, correctIndex, answerGiven, answers, status, question }: Props) => {
   return (
     <Wrapper>
       <hr />

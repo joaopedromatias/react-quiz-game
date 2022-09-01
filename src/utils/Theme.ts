@@ -1,17 +1,17 @@
-import { Theme } from 'styled-components';
+import { DefaultTheme } from 'styled-components';
 
-export const LightTheme: Theme = {
+export const LightTheme: DefaultTheme = {
   name: 'light',
   index: 0,
   color: '#000',
   background: '#eee',
 };
 
-export const DarkTheme: Theme = {
+export const DarkTheme: DefaultTheme = {
   name: 'dark',
   index: 1,
   color: '#fff',
   background: '#212121',
 };
 
-export const themes: Array<Theme> = [LightTheme, DarkTheme];
+export const themes: Array<DefaultTheme> = [LightTheme, DarkTheme];

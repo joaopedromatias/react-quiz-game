@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { LightTheme, DarkTheme, themes } from '../../utils/Theme';
-import { ThemeProvider, Theme } from 'styled-components';
+import { ThemeProvider, DefaultTheme } from 'styled-components';
 import { Storage } from '../../services/StorageService';
 import { SunIcon } from '../icons/SunIcon';
 import { MoonIcon } from '../icons/MoonIcon';
@@ -12,13 +12,13 @@ interface Props {
 }
 
 export const ThemeToggle: React.FC<Props> = ({ children }): JSX.Element => {
-  const getUserTheme = (): Theme => {
+  const getUserTheme = (): DefaultTheme => {
     const userPreferredTheme = Storage.getItem('theme');
-    const currentTheme: Theme = themes.find((theme) => theme.name === userPreferredTheme) || DarkTheme;
+    const currentTheme: DefaultTheme = themes.find((theme) => theme.name === userPreferredTheme) || DarkTheme;
     return currentTheme;
   };
 
-  const [theme, setTheme] = React.useState<Theme>(getUserTheme());
+  const [theme, setTheme] = React.useState<DefaultTheme>(getUserTheme());
 
   useEffect(() => {
     Storage.setItem('theme', theme.name);

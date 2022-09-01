@@ -1,21 +1,20 @@
-import { StateInterface, ActionInterface } from './utils/types';
+import { StateInterface, ActionInterface, GameData } from './utils/types';
 import { LogEvent } from './services/LogEvent';
 
 export const reducer = (state: StateInterface, action: ActionInterface): StateInterface => {
-  const { payload } = action;
-  const copyState = { ...state };
+  const copyState: StateInterface = { ...state };
+  const gameData: Array<GameData> | null = copyState.gameData ? copyState.gameData : null;
+  let currentStepGameData: GameData;
+  let newData;
+  let joinData;
 
   switch (action.type) {
     case 'UPDATE_BUTTON_STATE':
-      const newState: StateInterface = {
-        ...state,
-        submitButtonDisabled: action?.payload?.disabled || false,
-      };
-      return newState;
+      return { ...state, submitButtonDisabled: action.payload?.disabled || false };
 
     case 'UPDATE_QUIZ_CONFIG':
-      if (payload?.name && payload?.newValue) {
-        const newState: StateInterface = { ...state, [payload.name]: payload.newValue };
+      if (action.payload && action.payload.name && action.payload.newValue) {
+        const newState: StateInterface = { ...state, [action.payload.name]: action.payload.newValue };
         return newState;
       }
       break;
@@ -28,7 +27,7 @@ export const reducer = (state: StateInterface, action: ActionInterface): StateIn
       return { ...state, isLoading: true, isSetting: false };
 
     case 'SHOW_MODAL':
-      if (action?.payload?.modalMessage) {
+      if (action.payload?.modalMessage) {
         const newState = {
           ...state,
           modal: { isModalOpen: true, modalMessage: action.payload.modalMessage },
@@ -38,8 +37,7 @@ export const reducer = (state: StateInterface, action: ActionInterface): StateIn
       break;
 
     case 'HIDE_MODAL':
-      const newModalState = { ...state, modal: { isModalOpen: false, modalMessage: '' } };
-      return newModalState;
+      return { ...state, modal: { isModalOpen: false, modalMessage: '' } };
 
     case 'SET_IS_PLAYING':
       if (action.payload?.gameData) {
@@ -58,19 +56,22 @@ export const reducer = (state: StateInterface, action: ActionInterface): StateIn
       return { ...state, isResultsPage: true, isPlaying: false };
 
     case 'COMPUTE_STEP_RESULT_DATA':
-      const gameData = copyState.gameData!;
+      if (action.payload && gameData && typeof action.payload.currentStep === 'number') {
+        currentStepGameData = { ...gameData[action.payload.currentStep] };
 
-      const currentStepGameData = { ...gameData[action.payload?.currentStep!] };
-      const newData = {
-        answerGiven: action.payload?.answerGiven,
-        status: action.payload?.isAnswerCorrect,
-      };
+        newData = {
+          answerGiven: action.payload.answerGiven,
+          status: action.payload.isAnswerCorrect,
+        };
 
-      const joinData = { ...currentStepGameData, ...newData };
+        joinData = { ...currentStepGameData, ...newData };
 
-      gameData[action.payload?.currentStep!] = joinData;
+        gameData[action.payload.currentStep] = joinData;
 
-      return { ...state, gameData: gameData };
+        return { ...state, gameData: gameData };
+      }
+
+      break;
 
     case 'SHOW_LOADING_WARNING':
       LogEvent.send('loading', 'view', 'loading-warning', 1);
