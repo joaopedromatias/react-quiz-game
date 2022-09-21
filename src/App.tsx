@@ -8,8 +8,8 @@ import { ReducerProvider } from './ReducerProvider';
 const App: React.FC = (): JSX.Element => {
   return (
     <ThemeToggle>
-      <GlobalStyle />
       <ReducerProvider>
+        <GlobalStyle />
         <Title />
         <Box />
         <Footer />

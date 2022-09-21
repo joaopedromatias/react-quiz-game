@@ -141,15 +141,14 @@ export const Footer = () => {
 };
 
 const Wrapper = styled.div<WrapperProps>`
-  position: absolute;
-  transform: ${({ isResultScren }) => (isResultScren ? 'translateY(40px)' : '')};
+  position: fixed;
   font-size: 0.9rem;
   bottom: 0;
   left: 0;
   background-color: ${({ theme }) => (theme.name === 'light' ? 'var(--footer-bg-light)' : 'var(--footer-bg-dark)')};
   border-top-left-radius: 7px;
   border-top-right-radius: 7px;
-  width: 100vw;
+  width: 100%;
   font-family: sans-serif;
   font-weight: 300;
   height: 100px;
