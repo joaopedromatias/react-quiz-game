@@ -4,7 +4,7 @@ import { ReducerContext } from '../../ReducerProvider';
 import { useIsMobile } from '../../utils/useIsMobile';
 
 interface WrapperProps {
-  isResultScren: boolean;
+  isPlaying: boolean;
 }
 
 export const Footer = () => {
@@ -19,7 +19,7 @@ export const Footer = () => {
 
   return (
     <footer>
-      <Wrapper isResultScren={state.isResultsPage}>
+      <Wrapper isPlaying={state.isPlaying}>
         <div className='grid'>
           <div className='tdb'>
             <div>
@@ -141,14 +141,14 @@ export const Footer = () => {
 };
 
 const Wrapper = styled.div<WrapperProps>`
-  position: fixed;
+  position: ${({isPlaying}) => isPlaying ? 'absolute' : 'initial'};
   font-size: 0.9rem;
   bottom: 0;
   left: 0;
   background-color: ${({ theme }) => (theme.name === 'light' ? 'var(--footer-bg-light)' : 'var(--footer-bg-dark)')};
   border-top-left-radius: 7px;
   border-top-right-radius: 7px;
-  width: 100%;
+  width: 100vw;
   font-family: sans-serif;
   font-weight: 300;
   height: 100px;
