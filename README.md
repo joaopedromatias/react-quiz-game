@@ -10,7 +10,7 @@ This is a quiz game made by using the following technologies:
 
 #### `React Spring`
 
-🚀 Checkout the [live project](https://react-quiz-game-tdb.netlify.app/)
+🚀 Checkout the [live project](https://quiz-play-it.netlify.app/)
 
 # 🤾 State Management
 
