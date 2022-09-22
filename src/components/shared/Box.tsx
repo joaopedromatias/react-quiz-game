@@ -1,4 +1,5 @@
 import React, { useContext, lazy, Suspense } from 'react';
+import styled from 'styled-components';
 import { ReducerContext } from '../../ReducerProvider';
 import Button from './Button';
 
@@ -11,11 +12,13 @@ export const Box: React.FC = (): JSX.Element => {
 
   if (state.isSetting || state.isLoading || state.isPlaying) {
     return (
-      <div className='box'>
-        <Suspense fallback={FallbackFilterAndGame()}>
-          {state.isSetting || state.isLoading ? <FilterBox /> : state.isPlaying ? <GameBox /> : <></>}
-        </Suspense>
-      </div>
+      <Wrapper>
+        <div className='box'>
+          <Suspense fallback={FallbackFilterAndGame()}>
+            {state.isSetting || state.isLoading ? <FilterBox /> : state.isPlaying ? <GameBox /> : <></>}
+          </Suspense>
+        </div>
+      </Wrapper>
     );
   }
 
@@ -45,3 +48,11 @@ const FallbackFilterAndGame = () => {
 const FallbackResults = () => {
   return <h3 style={{ lineHeight: '500px', opacity: 0 }}>.</h3>;
 };
+
+
+const Wrapper = styled.div`
+height: 575px;
+@media (max-width: 600px) { 
+  height: initial;
+}
+`

@@ -141,10 +141,7 @@ export const Footer = () => {
 };
 
 const Wrapper = styled.div<WrapperProps>`
-  position: ${({isPlaying}) => isPlaying ? 'absolute' : 'initial'};
   font-size: 0.9rem;
-  bottom: 0;
-  left: 0;
   background-color: ${({ theme }) => (theme.name === 'light' ? 'var(--footer-bg-light)' : 'var(--footer-bg-dark)')};
   border-top-left-radius: 7px;
   border-top-right-radius: 7px;
@@ -198,7 +195,6 @@ const Wrapper = styled.div<WrapperProps>`
     max-width: 100vw;
     font-size: 0.8rem;
     height: 120px;
-    position: static;
     transform: none;
     .grid {
       height: 80px;
