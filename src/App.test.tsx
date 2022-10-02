@@ -1,6 +1,10 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import App from './App';
 
+beforeEach(() => {
+  window.dataLayer = [];
+})
+
 describe('application tests', () => { 
   
   const titleText = /quiz game/i;
@@ -16,12 +20,14 @@ describe('application tests', () => {
     expect(startButton).toBeInTheDocument();
   });
 
-  it('should show the button to answer question after the play button is pressed', async () => { 
+  it('should show the loading icon after the play button is pressed', async () => { 
     render(<App/>);
 
     const startButton = screen.getByRole('button', {name: startButtonText});
-    
+
     fireEvent.click(startButton);
-  
+
+    const loadingIcon = screen.getByTestId('loading-icon');
+    expect(loadingIcon).toBeInTheDocument();
   })
 })
