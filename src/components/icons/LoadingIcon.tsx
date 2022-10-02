@@ -16,7 +16,7 @@ export const LoadingIcon: React.FC = (): JSX.Element => {
           <LoadingWarning />
         </div>
       ) : (
-        <div className='center'>
+        <div className='center' data-testid='loading-icon'>
           <svg className='icon' xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 256 256'>
             <rect width='256' height='256' fill='none'></rect>
             <path
