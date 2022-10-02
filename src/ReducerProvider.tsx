@@ -1,5 +1,4 @@
 import { ReactNode, useReducer, createContext } from 'react';
-import { StateInterface, ActionInterface } from './utils/types';
 import { reducer } from './reducer';
 import { initialState } from './utils/initialState';
 

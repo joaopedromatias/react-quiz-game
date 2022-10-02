@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { GameData } from '../../utils/types';
 import { WrongIcon } from '../icons/WrongIcon';
 import { RigthIcon } from '../icons/RightIcon';
 

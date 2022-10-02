@@ -1,4 +1,3 @@
-import { StateInterface, ActionInterface, GameData } from './utils/types';
 import { LogEvent } from './services/LogEvent';
 
 export const reducer = (state: StateInterface, action: ActionInterface): StateInterface => {

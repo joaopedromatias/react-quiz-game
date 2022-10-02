@@ -2,7 +2,6 @@ import { useContext } from 'react';
 import { ReducerContext } from '../ReducerProvider';
 import { useFetchToken } from './useFetchToken';
 import { APIResponses } from '../utils/Enums';
-import { GameData } from '../utils/types';
 import CookieService from './CookieService';
 import { QuizCategoryEnum } from '../utils/Enums';
 

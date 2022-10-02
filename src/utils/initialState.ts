@@ -1,5 +1,3 @@
-import { StateInterface } from './types';
-
 export const initialState: StateInterface = {
   isPlaying: false,
   isSetting: true,
