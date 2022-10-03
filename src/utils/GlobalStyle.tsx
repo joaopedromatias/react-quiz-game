@@ -33,6 +33,10 @@ const GlobalStyle = createGlobalStyle`
     --username-light: #000000;
     --username-dark: #43a7e9;
     --icons-main-color: #878787;
+    --scroll-bar-thumb: #505050;
+    --bg-scroll-bar: #393939;
+    --fb-hover-color: #1870E5;
+    --tt-hover-color: #27A1D5;
 
 }
 
@@ -81,18 +85,18 @@ button, select, input:focus {
   display: block;
   width: 550px;
   border-radius: 0.5rem;
-  border: 1px solid ${({ theme }) => (theme.name === 'light' ? '#111825' : '#9e9b9b')};
+  border: 1px solid ${({ theme }) => (theme.name === 'light' ? 'var(--modal-border-dark)' : 'var(--modal-border-light)')};
   box-shadow: 1.5px 1.5px 3px;
   margin-bottom: 30px;
   max-height: 600px;
   overflow-y: auto;
-  scrollbar-color: ${({ theme }) => (theme.name === 'light' ? '' : '#505050 #393939')} ;
+  scrollbar-color: ${({ theme }) => (theme.name === 'light' ? '' : 'var(--scroll-bar-thumb) var(--bg-scroll-bar)')} ;
   scrollbar-width: thin;
   ::-webkit-scrollbar { 
-    background: ${({ theme }) => (theme.name === 'light' ? '' : '#393939')};
+    background: ${({ theme }) => (theme.name === 'light' ? '' : 'var(--bg-scroll-bar)')};
   }
   ::-webkit-scrollbar-thumb {
-    background: ${({ theme }) => (theme.name === 'light' ? '' : '#5c5c5c')};
+    background: ${({ theme }) => (theme.name === 'light' ? '' : 'var(--scroll-bar-thumb)')};
     border-radius: 10px;
   }
 
