@@ -51,7 +51,7 @@ const FallbackResults = () => {
 
 
 const Wrapper = styled.div`
-height: 575px;
+height: 625px;
 @media (max-width: 600px) { 
   height: initial;
 }
