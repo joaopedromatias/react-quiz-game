@@ -44,13 +44,8 @@ export const Footer = () => {
                 setTwitterColor(iconsInitalColor);
               }}
               rel='noopener noreferrer'
-              href='https://twitter.com/share?ref_src=twsrc%5Etfw'
-              className='twitter-share-button'
+              href='https://twitter.com/intent/tweet?hashtags=quiz-play-it&original_referer=http%3A%2F%2Flocalhost%3A3000%2F&ref_src=twsrc%5Etfw%7Ctwcamp%5Ebuttonembed%7Ctwterm%5Eshare%7Ctwgr%5E&text=Just%20found%20this%20amazing%20quiz%20game!&url=https%3A%2F%2Fquiz-play-it.netlify.app%2F'
               target='_blank'
-              data-text='Just found this amazing quiz game!'
-              data-url='https://quiz-play-it.netlify.app/'
-              data-hashtags='quiz-play-it'
-              data-show-count='false'
             >
               <svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' fill='#000000' viewBox='0 0 256 256'>
                 <rect width='256' height='256' fill='none'></rect>
