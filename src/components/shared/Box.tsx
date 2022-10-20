@@ -49,10 +49,9 @@ const FallbackResults = () => {
   return <h3 style={{ lineHeight: '500px', opacity: 0 }}>.</h3>;
 };
 
-
 const Wrapper = styled.div`
-height: 625px;
-@media (max-width: 600px) { 
-  height: initial;
-}
-`
+  height: 625px;
+  @media (max-width: 600px) {
+    height: initial;
+  }
+`;

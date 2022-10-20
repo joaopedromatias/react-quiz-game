@@ -85,7 +85,8 @@ button, select, input:focus {
   display: block;
   width: 550px;
   border-radius: 0.5rem;
-  border: 1px solid ${({ theme }) => (theme.name === 'light' ? 'var(--modal-border-dark)' : 'var(--modal-border-light)')};
+  border: 1px solid ${({ theme }) =>
+    theme.name === 'light' ? 'var(--modal-border-dark)' : 'var(--modal-border-light)'};
   box-shadow: 1.5px 1.5px 3px;
   margin-bottom: 30px;
   max-height: 600px;

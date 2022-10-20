@@ -77,7 +77,13 @@ export const Footer = () => {
                 href='https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fquiz-play-it.netlify.app%2F&amp;src=sdkpreparse'
                 className='fb-xfbml-parse-ignore'
               >
-                <svg xmlns='http://www.w3.org/2000/svg' width='30' height='30' fill='var(--black)' viewBox='0 0 256 256'>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  width='30'
+                  height='30'
+                  fill='var(--black)'
+                  viewBox='0 0 256 256'
+                >
                   <rect width='256' height='256' fill='none'></rect>
                   <circle
                     cx='128'

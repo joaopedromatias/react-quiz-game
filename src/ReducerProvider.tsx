@@ -15,7 +15,7 @@ interface Props {
 
 export const ReducerProvider: React.FC<Props> = ({ children }: Props): JSX.Element => {
   const [state, dispatch] = useReducer(reducer, initialState);
-  
+
   return (
     <>
       <ReducerContext.Provider value={{ state, dispatch }}>{children}</ReducerContext.Provider>
