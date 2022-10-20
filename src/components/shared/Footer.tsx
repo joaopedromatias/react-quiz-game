@@ -170,9 +170,10 @@ const Wrapper = styled.div<WrapperProps>`
       align-items: center;
     }
     .feedback {
-      width: 100%;
+      width: 95%;
       text-align: right;
       margin: auto;
+      margin-right: 15px;
       a {
         color: var(--link-color);
       }
