@@ -91,7 +91,7 @@ export const useFetchQuestions = async (questions: string) => {
 
   const timeout = setTimeout(() => {
     dispatch({ type: 'SHOW_LOADING_WARNING' });
-  }, 6000);
+  }, 15000);
 
   const apiToken = await useFetchToken();
   const loaded = await (apiToken ? fetchQuestionsTokenized(apiToken) : fetchQuestionsNotTokenized());
