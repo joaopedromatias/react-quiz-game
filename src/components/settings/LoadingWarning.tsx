@@ -9,7 +9,7 @@ export const LoadingWarning = () => {
   return (
     <Wrapper>
       <div>
-        <span>Check your internet connection and try again</span>
+        <span>Sorry, the external server is not responding right now.</span>
         <Button
           disabled={false}
           btnType='button'
