@@ -10,6 +10,8 @@ This is a quiz game made by using the following technologies:
 
 #### `React Spring`
 
+The project was live, but the API stop sending CORS headers so it stopped working
+
 # 🤾 State Management
 
 The state management relies on the usage of `useReducer` and `Context API`
